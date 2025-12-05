@@ -9,7 +9,37 @@ import SwiftUI
 
 struct ViewExtractionModule: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            DriverRowView(driverName: "Lewis Hamilton", imageName: "Alpine", teamName: "Alpine")
+            DriverRowView(driverName: "Checo Perez", imageName: "Redbull", teamName: "Redbull")
+            DriverRowView(driverName: "Riciardo", imageName: "Renault", teamName: "Renault")
+        }
+        .padding()
+    }
+}
+
+struct DriverRowView: View {
+    let driverName: String
+    let imageName: String
+    let teamName: String
+    var body: some View {
+        HStack {
+            Image(imageName)
+                .resizable()
+                .frame(width: 48, height: 48)
+                .clipShape(Circle())
+                .shadow(radius: 3)
+            
+            VStack(alignment: .leading) {
+                Text(driverName)
+             
+                Text(teamName)
+                    .foregroundColor(.gray)
+            }
+            .font(.subheadline)
+            
+            Spacer()
+        }
     }
 }
 
