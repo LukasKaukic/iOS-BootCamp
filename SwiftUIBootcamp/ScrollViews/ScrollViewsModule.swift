@@ -25,7 +25,6 @@ struct ScrollViewsModule: View {
         "sushi",
         "Toasts",
         "Pizza"
-        
     ]
     var body: some View {
       /*   ScrollView(.horizontal) {
