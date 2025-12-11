@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-struct Driver: Identifiable, Hashable {
-    var id = NSUUID().uuidString
-    let driverName: String
-}
 
 struct Team: Identifiable, Hashable {
     var id = NSUUID().uuidString
